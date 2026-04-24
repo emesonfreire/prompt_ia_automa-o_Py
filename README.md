@@ -1,80 +1,72 @@
 # Prompt de Engenharia de IA para Automação
 
-Este repositório contém um prompt de engenharia de IA altamente estruturado para gerar soluções de automação em Python, com foco em projetos corporativos, qualidade de código e execução em Google Colab.
+Este novo **README** foi estruturado para refletir a robustez técnica da **v3 (Enterprise-Grade)** do seu prompt. Ele posiciona o framework não apenas como um gerador de scripts, mas como uma ferramenta de governança para engenharia de software em automação.
 
-## O que está aqui
+---
 
-- `prompt_eng_ia_automacao.md`: o prompt principal que descreve o papel, requisitos e formato de entrega esperados.
-- `README.md`: uma explicação amigável de como usar o prompt corretamente.
+# 🚀 Framework de Prompting: Engenheiro de Automação Python (v3)
 
-## Para que serve este prompt
+Este repositório contém um framework de **Prompt Engineering** de alta fidelidade, projetado para transformar requisitos de negócio em sistemas de automação Python robustos, resilientes e prontos para o ambiente corporativo (*Enterprise-Grade*).
 
-Este prompt foi criado para orientar um modelo de linguagem a agir como um engenheiro sênior de automação/RPA com foco em:
+## 🎯 O que é este Framework?
 
-- código Python limpo e tipado
-- modularidade e padrões SOLID
-- tratamento robusto de erros
-- logging corporativo
-- auditoria e métricas de execução
-- execução em ambiente Google Colab
+Diferente de prompts genéricos de codificação, a **v3** impõe uma governança de engenharia rigorosa. Ele força o modelo de IA a atuar como um **Engenheiro Sênior de Software/RPA** (nível Big4/Accenture), garantindo que a saída não seja apenas funcional, mas auditável e sustentável.
 
-## Como usar o prompt
+### Pilares Técnicos Incorporados
+* **SOLID Completo:** Desacoplamento via `Protocols` (Interface Segregation e Dependency Inversion).
+* **Arquitetura em Camadas:** Separação inegociável entre **IO** (`Reader`/`Writer`) e **Lógica de Domínio** (Pura).
+* **Resiliência Industrial:** Implementação de *Exponential Backoff* e *Retry* com a biblioteca `tenacity`.
+* **Segurança de Dados:** Sanitização de entradas e mascaramento automático de campos sensíveis em logs.
+* **Idempotência:** Proteção contra reexecuções e processamentos duplicados via checksum/hash.
 
-1. Abra `prompt_eng_ia_automacao.md`.
-2. Substitua os campos entre colchetes `[ ]` com as informações do seu processo:
-   - `AS-IS`: descreva o processo atual manual.
-   - `TO-BE`: descreva o resultado automatizado desejado.
-   - `Criticidade`: Alta, Média ou Baixa.
-   - `Volume estimado`: por exemplo, `~500 registros/execução`.
-3. Se for um pedido de refatoração, cole o código original dentro do bloco `Código original para refatoração`.
-4. Envie o prompt completo para o modelo de IA ou use-o como base para a solicitação.
+---
 
-## Estrutura esperada do resultado
+## 🛠️ Como Utilizar
 
-O prompt orienta o modelo a entregar em quatro partes:
+1.  **Copie o Prompt:** Utilize o conteúdo integral do arquivo `prompt_v3_enterprise.md`.
+2.  **Preencha os Metadados:** Localize os blocos `[SUBSTITUIR]` e forneça:
+    * **AS-IS / TO-BE:** O fluxo manual atual vs. o objetivo automatizado.
+    * **Contexto de Processo:** Defina criticidade e volume estimado.
+    * **Entrada de Código:** Se for uma refatoração, cole o código legado; se for um projeto novo (*greenfield*), descreva as regras.
+3.  **Execução:** Envie para a IA (Gemini 1.5 Pro, GPT-4, etc.) e receba uma solução estruturada para produção.
 
-1. Diagnóstico Técnico
-2. Código Refatorado
-3. Justificativa de Arquitetura
-4. Dependências necessárias
+---
 
-Além disso, o código deve seguir os requisitos técnicos obrigatórios:
+## 🏗️ Estrutura da Resposta Esperada
 
-- usar `dataclasses` ou `TypedDict` para schemas
-- aplicar type hints em todas as funções
-- centralizar configurações em `CONFIG`
-- evitar `print()` para logging
-- usar `logging` com formato corporativo
-- tratar erros de forma granular
-- manter registros rejeitados em `rejected_records`
-- apresentar resumo de execução com métricas
+O prompt obriga a IA a entregar a solução dividida em 5 seções críticas:
 
-## Dicas para usar melhor o prompt
+1.  **Diagnóstico Técnico:** Análise detalhada de falhas e violações de princípios de software no cenário original.
+2.  **Código Completo (Production-Ready):** Solução 100% tipada, modularizada e sem omissões (`...`).
+3.  **Testes Unitários:** Suite de testes com `pytest` cobrindo o caminho feliz, falhas de validação e erros de IO.
+4.  **Justificativa de Arquitetura:** Explicação técnica da superioridade da abordagem escolhida.
+5.  **Dependências:** Lista exata de bibliotecas com versões mínimas recomendadas.
 
-- Sempre forneça o máximo de contexto do processo manual e dos dados de entrada.
-- Não envie apenas “faça um script”; descreva o problema, o ambiente e as regras de negócio.
-- Se não houver código inicial, o prompt pede explicitamente para solicitá-lo antes de prosseguir.
-- Peça ao modelo para manter todo código “production-ready” e compatível com `flake8` e `mypy --strict` conceitualmente.
+---
 
-## Uso em Google Colab
+## 🧪 Requisitos de Qualidade (Checklist)
 
-O prompt é pensado para ser usado em notebooks Colab. Algumas orientações específicas:
+Para ser considerada válida pelo framework, a saída deve cumprir:
+* **Zero Magic Numbers:** Configurações centralizadas exclusivamente no dicionário `CONFIG`.
+* **Logging Profissional:** Proibido o uso de `print()`. Logs com timestamps e níveis hierárquicos.
+* **Testabilidade:** A camada de **Domain** deve ser testável sem necessidade de rede ou banco de dados.
+* **Segurança:** Uso de `os.environ` para segredos e proibição de valores *hardcoded*.
+* **Paralelismo:** Implementação de `ThreadPoolExecutor` para operações de rede/API.
 
-- instale dependências em uma célula `!pip install ...`
-- coloque imports e `CONFIG` em células iniciais
-- mantenha funções em células separadas por responsabilidade
-- não use `if __name__ == "__main__"`
-- use variáveis sensíveis via `os.environ` ou `google.colab` quando necessário
+---
 
-## Como adaptar para outros contextos
+## 📓 Fluxo em Google Colab
 
-Se você quiser usar este prompt fora do Colab, mantenha a mesma disciplina de engenharia:
+O prompt é otimizado para a estrutura de notebooks:
+* **Modularização por Células:** Organização lógica (Imports -> Config -> Schemas -> Camadas -> Orquestrador).
+* **Resumo Executivo:** Ao final da execução, um quadro visual com métricas (Sucessos, Erros, Tempo) deve ser exibido.
 
-- preserve o bloco `CONFIG`
-- mantenha logging consistente
-- use tratamento de dados e validações robustas
-- mantenha o formato de entrega dividido em diagnóstico, código, justificativa e dependências
+---
 
-## Conclusão
+## 🤝 Contribuição
 
-Use `prompt_eng_ia_automacao.md` como roteiro para solicitar soluções de automação Python de forma confiável. Este README explica o propósito, a forma de uso e as melhores práticas para obter resultados profissionais com o prompt.
+Este framework é um documento vivo. Sinta-se à vontade para adaptar as regras de `naming conventions` ou adicionar novos `Protocols` baseados na stack tecnológica específica do seu time.
+
+---
+
+> **Aviso:** Este prompt foi desenhado para eliminar o "código descartável" e elevar o padrão de entrega de automações RPA para o nível de Engenharia de Software.
