@@ -513,6 +513,16 @@ print(resumo)
 
 ---
 
+15. Persistência de Resultados (Output File)
+Toda execução deve gerar obrigatoriamente um arquivo de saída (CSV ou JSON) contendo o consolidado dos ProcessResult.
+
+O nome do arquivo deve conter o _timestamp.
+
+Deve incluir colunas de status, record_id e error_msg para auditoria.
+
+A implementação deve ser feita em uma classe que siga o DataWriter Protocol.
+---
+
 ## TAREFA
 
 ⚠️ Se nenhum código foi fornecido ainda, solicite antes de prosseguir:
