@@ -23,7 +23,7 @@ Diferente de prompts genéricos de codificação, a **v3** impõe uma governanç
 
 ## 🛠️ Como Utilizar
 
-1.  **Copie o Prompt:** Utilize o conteúdo integral do arquivo `prompt_v3_enterprise.md`.
+1.  **Copie o Prompt:** Utilize o conteúdo integral do arquivo `prompt_eng_ia_automacao.md`.
 2.  **Preencha os Metadados:** Localize os blocos `[SUBSTITUIR]` e forneça:
     * **AS-IS / TO-BE:** O fluxo manual atual vs. o objetivo automatizado.
     * **Contexto de Processo:** Defina criticidade e volume estimado.
